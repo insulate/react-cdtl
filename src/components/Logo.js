@@ -1,4 +1,5 @@
 import React from 'react'
+import { logo } from '../styles/style'
 
 const Logo = () => {
     const logoImage = {
@@ -7,7 +8,7 @@ const Logo = () => {
     return (
         <div>
             {/* <img src='./logo192.png' width="100" alt="logo" /> */}
-            <img src={logoImage.url} width="100" alt="logo" />
+            <img style={logo} src={logoImage.url} width="100" alt="logo" />
         </div>
     )
 }
