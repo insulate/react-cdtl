@@ -7,7 +7,7 @@ function App() {
     <div>
       <Logo />
       <Header />
-      <Footer />
+      <Footer title='Google' website='www.google.com' postCode={41000} isOpen={true} />
     </div>
   );
 }

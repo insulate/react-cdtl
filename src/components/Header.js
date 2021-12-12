@@ -9,6 +9,13 @@ const Header = () => {
         return companyName + '.com'
     }
     const isLogin = false;
+    const showMe = () => {
+        alert('Hello React')
+    }
+    const products = [
+        { id: 1, name: 'Coke' },
+        { id: 2, name: 'Pepsi' }
+    ]
 
     return (
         <>
@@ -25,10 +32,23 @@ const Header = () => {
                     </>
                 )
             }
+            <br />
             {/* if else */}
             {
                 isLogin ? <Logo /> : 'ไม่มีสิทธิดู logo'
             }
+            <br />
+            <button onClick={showMe}>Click Me</button>
+            <br />
+            <ul>
+                {
+                    products.map((product, index) => {
+                        return (
+                            <li key={product.id}>{product.name} {index + 1}</li>
+                        )
+                    })
+                }
+            </ul>
             <hr />
         </>
     )
