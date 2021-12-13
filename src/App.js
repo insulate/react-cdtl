@@ -11,6 +11,9 @@ import ProductPage from "./pages/ProductPage";
 import DetailPage from "./pages/DetailPage"
 import HospitalPage from "./pages/hospital/HospitalPage";
 import { QueryClient, QueryClientProvider } from "react-query";
+import IndexPage from "./pages/category/IndexPage";
+import CreatePage from "./pages/category/CreatePage";
+import EditPage from "./pages/category/EditPage";
 
 const queryClient = new QueryClient()
 
@@ -27,6 +30,9 @@ function App() {
             <Route path="product" element={<ProductPage />} />
             <Route path="detail/:id/title/:title" element={<DetailPage />} />
             <Route path="hospital" element={<HospitalPage />} />
+            <Route path="category" element={<IndexPage />} />
+            <Route path="category/create" element={<CreatePage />} />
+            <Route path="category/edit/:id" element={<EditPage />} />
             <Route
               path="*"
               element={
