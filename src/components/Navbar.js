@@ -1,25 +1,26 @@
 import React from 'react'
-import { Navbar, Nav, NavDropdown, Container } from 'react-bootstrap'
+import { Navbar, Nav, Container } from 'react-bootstrap'
+import { Link, NavLink } from "react-router-dom";
 
 const NavBar = () => {
+    let classes = {
+        active: 'nav-link active',
+        noActive: 'nav-link'
+    }
     return (
         <>
             <Navbar bg="success" expand="lg" variant="dark">
                 <Container>
-                    <Navbar.Brand href="#home">CodingThailand</Navbar.Brand>
+                    <Link className="navbar-brand" to="/" exact="true">CodingThailand</Link>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="me-auto">
-                            <Nav.Link href="#home">Home</Nav.Link>
-                            <Nav.Link href="#link">Link</Nav.Link>
-                            <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-                                <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-                                <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
-                                <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-                                <NavDropdown.Divider />
-                                <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
-                            </NavDropdown>
+                            <NavLink className={(navData) => navData.isActive ? classes.active : classes.noActive} to="/" >Home</NavLink>
+                            <NavLink className={(navData) => navData.isActive ? classes.active : classes.noActive} to="/about" >About</NavLink>
                         </Nav>
+                        {/* className?: string | ((props: {
+        isActive: boolean;
+    }) => string); */}
                     </Navbar.Collapse>
                 </Container>
             </Navbar>
