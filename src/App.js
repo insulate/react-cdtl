@@ -9,6 +9,7 @@ import {
 import AboutPage from "./pages/AboutPage";
 import ProductPage from "./pages/ProductPage";
 import DetailPage from "./pages/DetailPage"
+import HospitalPage from "./pages/hospital/HospitalPage";
 function App() {
   return (
     <>
@@ -21,6 +22,7 @@ function App() {
           <Route path="about" element={<AboutPage />} />
           <Route path="product" element={<ProductPage />} />
           <Route path="detail/:id/title/:title" element={<DetailPage />} />
+          <Route path="hospital" element={<HospitalPage />} />
           <Route
             path="*"
             element={
