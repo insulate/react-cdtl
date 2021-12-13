@@ -78,8 +78,25 @@ const IndexPage = () => {
                                                 <td>{p.id}</td>
                                                 <td>{p.name}</td>
                                                 <td>
-                                                    <Button className="ml-2" variant="outline-info" size="sm"><BsPencilFill /></Button>
-                                                    <Button className="ml-2" variant="outline-danger" size="sm"><BsTrash /></Button>
+                                                    <Button className="ml-2" variant="outline-info" size="sm" onClick={() => {
+                                                        navigate(`/category/edit/${p.id}`)
+                                                    }}>
+                                                        <BsPencilFill />
+                                                    </Button>
+                                                    <Button
+                                                        className="ml-2"
+                                                        variant="outline-danger"
+                                                        size="sm"
+                                                        onClick={async () => {
+                                                            const isConfirm = window.confirm('แน่ใจว่าต้องการลบข้อมูล ' + p.name + '?');
+                                                            if (isConfirm === true) {
+                                                                const resp = await axios.delete('https://api.codingthailand.com/api/category/' + p.id)
+                                                                alert(resp.data.message);
+                                                                window.location.reload(false);
+                                                            }
+                                                        }}>
+                                                        <BsTrash />
+                                                    </Button>
                                                 </td>
                                             </tr>
                                         )

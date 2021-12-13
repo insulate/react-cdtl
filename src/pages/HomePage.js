@@ -44,6 +44,12 @@ const HomePage = () => {
         )
     }
 
+    if (isFetching) {
+        <div className='text-center mt-5'>
+            <Spinner animation="border" variant="primary" />
+        </div>
+    }
+
     return (
         <>
             <main role="main">
@@ -61,7 +67,7 @@ const HomePage = () => {
                         {
                             data.data.map((news, index) => {
                                 return (
-                                    <div className="col-md-4">
+                                    <div className="col-md-4" key={news.id}>
                                         <h2>{news.topic}</h2>
                                         <p>{news.detail}</p>
                                         <p>หมวดหมู่: {news.name}</p>
