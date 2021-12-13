@@ -16,6 +16,7 @@ const NavBar = () => {
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="me-auto">
                             <NavLink className={(navData) => navData.isActive ? classes.active : classes.noActive} to="/" >Home</NavLink>
+                            <NavLink className={(navData) => navData.isActive ? classes.active : classes.noActive} to="/product" >Product</NavLink>
                             <NavLink className={(navData) => navData.isActive ? classes.active : classes.noActive} to="/about" >About</NavLink>
                         </Nav>
                         {/* className?: string | ((props: {
