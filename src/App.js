@@ -14,12 +14,14 @@ import { QueryClient, QueryClientProvider } from "react-query";
 import IndexPage from "./pages/category/IndexPage";
 import CreatePage from "./pages/category/CreatePage";
 import EditPage from "./pages/category/EditPage";
+import UploadPage from "./pages/UploadPage";
+import { ToastProvider } from 'react-toast-notifications';
 
 const queryClient = new QueryClient()
 
 function App() {
   return (
-    <>
+    <ToastProvider>
       <QueryClientProvider client={queryClient}>
         <BrowserRouter>
           <Navbar />
@@ -33,6 +35,7 @@ function App() {
             <Route path="category" element={<IndexPage />} />
             <Route path="category/create" element={<CreatePage />} />
             <Route path="category/edit/:id" element={<EditPage />} />
+            <Route path="upload" element={<UploadPage />} />
             <Route
               path="*"
               element={
@@ -47,7 +50,7 @@ function App() {
           </footer>
         </BrowserRouter>
       </QueryClientProvider>
-    </>
+    </ToastProvider>
   );
 }
 

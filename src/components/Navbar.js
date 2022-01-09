@@ -19,6 +19,7 @@ const NavBar = () => {
                             <NavLink className={(navData) => navData.isActive ? classes.active : classes.noActive} to="/" >Home</NavLink>
                             <NavLink className={(navData) => navData.isActive ? classes.active : classes.noActive} to="/product" >Product</NavLink>
                             <NavLink className={(navData) => navData.isActive ? classes.active : classes.noActive} to="/about" >About</NavLink>
+                            <NavLink className={(navData) => navData.isActive ? classes.active : classes.noActive} to="/upload" >อัปโหลดไฟล์</NavLink>
                             <NavDropdown title="Link" id="navbarScrollingDropdown">
                                 <NavDropdown.Item onClick={() => { history('/hospital') }}>ข้อมูลสถานพยาบาล (Pagination)</NavDropdown.Item>
                                 <NavDropdown.Item onClick={() => { history('/category') }}>หมวดหมู่ข่าว (CRUD)</NavDropdown.Item>
