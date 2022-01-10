@@ -16,6 +16,9 @@ import CreatePage from "./pages/category/CreatePage";
 import EditPage from "./pages/category/EditPage";
 import UploadPage from "./pages/UploadPage";
 import { ToastProvider } from 'react-toast-notifications';
+import LoginPage from "./pages/LoginPage";
+import Register from "./pages/Register";
+import MemberPage from "./pages/MemberPage";
 
 const queryClient = new QueryClient()
 
@@ -36,6 +39,9 @@ function App() {
             <Route path="category/create" element={<CreatePage />} />
             <Route path="category/edit/:id" element={<EditPage />} />
             <Route path="upload" element={<UploadPage />} />
+            <Route path="login" element={<LoginPage />} />
+            <Route path="register" element={<Register />} />
+            <Route path="member" element={<MemberPage />} />
             <Route
               path="*"
               element={
